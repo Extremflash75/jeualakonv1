@@ -1,5 +1,7 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8">
+<html lang="fr"><head><!-- Lien vers le manifeste PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#8b4513"></head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>jeualakon — Belote</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&display=swap">
@@ -383,4 +385,12 @@ addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;c
  else if(a=="home")leave();else if(a=="sq")sqClick(v);else if(a=="v3"){ST.v3=!ST.v3;draw()}else send(a,v)});
 home();
 try{window.claude&&window.claude.use("room").then(r=>{R0=r;if(!G&&!ST.r)home()}).catch(()=>{})}catch(e){}
+</script><script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then((reg) => console.log('Service Worker enregistré avec succès !', reg.scope))
+        .catch((err) => console.log('Échec de l\'enregistrement du Service Worker :', err));
+    });
+  }
 </script></body></html>
